@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help System</title>
-	<link rel="stylesheet" href="login.css" />
-    <script src="login.js"></script>
+    <link rel="stylesheet" href="/static/css/login.css" />
+    <!--<script src=""></script>-->
 </head>
 <body>
-	<img alt="Plano de Fundo" id="img-background" src="static/img/background.png" />
-    <form>
+    <div class="container">
+        <h1 id="header-logo">HELP SYSTEM</h1>
+        
+        <form class="login-form" aria-labelledby="login-title">
+            <label for="email">E-mail:</label>
+            <input id="email" name="email" type="email" placeholder="Preencha o e-mail" required />
+            
+            <label for="password">Senha:</label>
+            <input id="password" name="password" type="password" placeholder="Preencha a senha" required />
+            
+            <div class="button-group">
+                <button id="btn-login" type="submit">Login</button>
+                <button id="btn-register" type="button" onclick="window.location.href='register.html'">Registrar</button>
+            </div>
 
-      <span id="success-message" hidden="true">Usuário validado!</span>
-      <span id="error-message" hidden="true">Usuário inválido!</span>
-      <label for="email">E-mail:</label>
-      <input id="email" type="text" placeholder="Preenha o e-mail" />
-      <label for="password">Senha:</label>
-      <input id="password" type="text" placeholder="Preencha a senha" />
-      <button id="btn-login">Login</button>
-	  <button id="btn-register">Registrar</button>
-	  <a href="url">Esqueceu sua senha? Clique aqui</a>
-
-    </form>
-  </body>
+            <p class="forgot-password">
+                <a href="recuperacao_senha.html">Esqueceu sua senha? Clique aqui</a>
+            </p>
+        </form>
+    </div>
+</body>
 </html>
