@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Help System</title>
+	<link rel="stylesheet" href="cadastro.css" />
+    <script src="cadastro.js"></script>
+</head>
+<body>
+	<img alt="Plano de Fundo" id="img-background" src="static/img/background.png" />
+    <form>
+      <label for="first-name">Nome:</label>
+      <input id="first-name" type="text" placeholder="Preencha o seu nome"/>
+      <label for="last-name">Nome:</label>
+      <input id="last-name" type="text" placeholder="Preencha o seu sobrenome"/>
+      <span id="register-success-message" hidden="true">Usuário cadastrado!</span>
+      <span id="register-error-message" hidden="true">Erro no cadastro!</span>
+      <label for="register-email">E-mail:</label>
+      <input id="register-email" type="text" placeholder="Preenha o seu e-mail" />
+      <label for="register-password">Senha:</label>
+      <input id="register-password" type="text" placeholder="Preencha a sua senha" />
+      <button id="btn-register">Registrar</button>
+
+    </form>
+  </body>
+</html>
