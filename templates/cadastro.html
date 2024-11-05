@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Help System</title>
-	<link rel="stylesheet" href="cadastro.css" />
-    <script src="cadastro.js"></script>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/static/css/cadastro.css" />
 </head>
 <body>
-	<img alt="Plano de Fundo" id="img-background" src="static/img/background.png" />
-    <form>
-      <label for="first-name">Nome:</label>
-      <input id="first-name" type="text" placeholder="Preencha o seu nome"/>
-      <label for="last-name">Sobrenome:</label>
-      <input id="last-name" type="text" placeholder="Preencha o seu sobrenome"/>
-      <span id="register-success-message" hidden="true">Usuário cadastrado!</span>
-      <span id="register-error-message" hidden="true">Erro no cadastro!</span>
-      <label for="register-email">E-mail:</label>
-      <input id="register-email" type="text" placeholder="Preenha o seu e-mail" />
-      <label for="register-password">Senha:</label>
-      <input id="register-password" type="text" placeholder="Preencha a sua senha" />
-      <button id="btn-register">Registrar</button>
+    <div class="container">
+        <h1>CADASTRO</h1>
+        <form action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-    </form>
-  </body>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit">REGISTRAR</button>
+        </form>
+    </div>
+</body>
 </html>
