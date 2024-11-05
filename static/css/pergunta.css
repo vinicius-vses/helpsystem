@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #d3a4f5 30%, #a7f4d8 70%);
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #3d2f5d;
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+
+.form-container {
+    background-color: #e6f0f4;
+    border-radius: 10px;
+    padding: 30px;
+    width: 800px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    font-size: 1.1em;
+}
+
+#quillInput {
+    background-color: white;
+    height: 150px; 
+    margin: 0; 
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #aaa;
+    font-size: 1.1em;
+}
+
+.ql-toolbar {
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    text-align: left;
+}
+
+.ql-container {
+    border: none;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #b8a9dc;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9a7fb8;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    background-color: #b8a9dc;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #6f97b3;
+}
+
+.form-container {
+    background-color: #e6f0f4;
+    border-radius: 10px;
+    padding: 30px;
+    width: 800px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #d086d8;
+    color: #fff;               
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #9a7fb8;
+}
