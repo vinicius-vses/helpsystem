@@ -12,7 +12,7 @@
     <form>
       <label for="first-name">Nome:</label>
       <input id="first-name" type="text" placeholder="Preencha o seu nome"/>
-      <label for="last-name">Nome:</label>
+      <label for="last-name">Sobrenome:</label>
       <input id="last-name" type="text" placeholder="Preencha o seu sobrenome"/>
       <span id="register-success-message" hidden="true">Usuário cadastrado!</span>
       <span id="register-error-message" hidden="true">Erro no cadastro!</span>
