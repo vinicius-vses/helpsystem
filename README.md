@@ -3,7 +3,7 @@
 
 <h2>Equipe do Projeto</h2>
 <ul>
-  <li><strong>Product Owners (PO):</strong> Murilo Paiva e Luana Dantas</li>
+  <li><strong>Product Owners (PO):</strong> Murilo Paiva</li>
   <li><strong>Scrum Master:</strong> Marcelo Cervino</li>
   <li><strong>Programadores:</strong> Marcos de Camargo, Raquel Moriconi, Vinícius Souza</li>
 </ul>
