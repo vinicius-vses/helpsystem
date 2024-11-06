@@ -26,11 +26,13 @@ CREATE TABLE solicitacoes (
     id_categoria INTEGER NOT NULL,
     titulo TEXT NOT NULL,
     descricao TEXT,
-    status TEXT DEFAULT 'Não Resolvida',
+    status INTEGER DEFAULT 0 CHECK (status IN (0, 1)), -- 0 = Não Resolvida, 1 = Resolvida
     data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    data_resolucao DATETIME,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
+
 
 CREATE TABLE respostas (
     id_resposta INTEGER PRIMARY KEY AUTOINCREMENT,
