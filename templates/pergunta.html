@@ -5,35 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/pergunta.css">
+    <link href="https://cdn.jsdelivr.net/npm/quill@1.3.6/dist/quill.snow.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>HELP SYSTEM</h1>
-    </header>
     <div class="container">
-        <button class="ask-button">FAZER UMA PERGUNTA!</button>
-        <div class="search-bar">
-            <input type="text" placeholder="Pesquisar">
-            <span class="search-icon">🔍</span>
-        </div>
-        <div class="questions-list">
-            <div class="question-box">
-                <a href="#" class="question-link">Qual é a diferença entre front-end e back-end?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
-            </div>
-            <div class="question-box">
-                <a href="#" class="question-link">Como centraliza a uma div?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
-            </div>
-            <div class="question-box">
-                <a href="#" class="question-link">Como envio um e-mail assinado pela empresa?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
-            </div>
-            <div class="question-box">
-                <a href="#" class="question-link">Quais são as práticas recomendadas para escrever um código limpo?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
-            </div>
+        <h1>HELP SYSTEM</h1>
+        <div class="form-container">
+            <a href="index.html" class="back-button">Voltar</a>
+            <label for="titulo">Faça sua pergunta:</label>
+            <input type="text" id="titulo" placeholder="Título">
+            <select id="categoria">
+                <option value="" disabled selected>Categoria</option>
+                <option value="conta-e-cadastro">Conta e Cadastro</option>
+                <option value="pagamentos-e-faturamento">Pagamentos e Faturamento</option>
+                <option value="configuracoes-e-preferencias">Configurações e Preferências</option>
+                <option value="tecnico-e-solucao-de-problemas">Técnico e Solução de Problemas</option>
+                <option value="seguranca-e-privacidade">Segurança e Privacidade</option>
+                <option value="funcionalidades-e-recursos">Funcionalidades e Recursos</option>
+                <option value="suporte-e-atendimento-ao-cliente">Suporte e Atendimento ao Cliente</option>
+                <option value="integracoes-e-apis">Integrações e APIs</option>
+                <option value="feedback-e-sugestoes">Feedback e Sugestões</option>
+                <option value="comunidade-e-colaboracao">Comunidade e Colaboração</option>
+                <option value="documentacao-e-tutoriais">Documentação e Tutoriais</option>
+                <option value="atualizacoes-e-novidades">Atualizações e Novidades</option>
+                <option value="politicas-e-termos-de-uso">Políticas e Termos de Uso</option>
+                <option value="outro">Outro</option>
+            </select>
+            <div id="quillInput"></div>
+            <button type="submit">ENVIAR</button>
         </div>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/quill@1.3.6/dist/quill.min.js"></script>
+    <script>
+        var quill = new Quill('#quillInput', {
+            theme: "snow",
+            placeholder: "Descreva sua pergunta...",
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, false] }],
+                    ['bold', 'italic', 'underline'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    ['link', 'image'],
+                    ['clean']
+                ]
+            }
+        });
+    </script>
 </body>
 </html>

@@ -47,6 +47,8 @@ header h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
     transition: background 0.3s;
 }
 
@@ -107,10 +109,14 @@ header h1 {
     align-items: center;
 }
 
-.question-box p {
+.question-link {
     font-size: 1em;
-    margin-right: 10px;
-    flex: 1;
+    text-decoration: none;
+    color: #333;
+}
+
+.question-link:hover {
+    text-decoration: underline;
 }
 
 .info {
