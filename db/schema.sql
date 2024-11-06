@@ -46,6 +46,7 @@ CREATE TABLE respostas (
 CREATE TABLE ranking (
     id_usuario INTEGER PRIMARY KEY,
     pontos_totais INTEGER DEFAULT 0,
+    nivel_proatividade INTEGER DEFAULT 0,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
 
