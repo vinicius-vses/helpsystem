@@ -60,12 +60,3 @@ BEGIN
     SET pontos_totais = pontos_totais + NEW.pontos
     WHERE id_usuario = NEW.id_usuario;
 END;
-
-CREATE TRIGGER atualizar_pontuacao_apos_edicao_resposta
-AFTER UPDATE OF pontos ON respostas
-FOR EACH ROW
-BEGIN
-    UPDATE ranking
-    SET pontos_totais = pontos_totais + (NEW.pontos - OLD.pontos)
-    WHERE id_usuario = NEW.id_usuario;
-END;
