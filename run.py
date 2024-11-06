@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,current_app
 from app import create_app
+
 app = Flask(__name__)
 
 if __name__ == '__main__':

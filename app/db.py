@@ -5,6 +5,8 @@ from flask import current_app, g
 from flask.cli import with_appcontext
 import os
 
+db_path = os.path.join('..','db', 'help-system.db')
+sql_script_path = os.path.join('..', 'db', 'schema.sql')
 
 def get_db():
     if 'db' not in g:
@@ -25,13 +27,11 @@ def close_db(e=None):
 @click.command('init-db')
 @with_appcontext
 def init_db():
-    db_path = os.path.join(current_app.root_path, 'db', 'help-system.db')
-    sql_script_path = os.path.join(current_app.root_path, 'db', 'schema.sql')
 
     if not os.path.exists(db_path):
         print(f"Database '{db_path}' not found. Creating a new database...")
         conn = sqlite3.connect(db_path)
-        conn.close()  # Just create the database file, then close the connection
+        conn.close()
         print(f"Database '{db_path}' created.")
 
     try:
@@ -55,5 +55,7 @@ sqlite3.register_converter(
 )
 
 def init_app(app):
-    app.teardown_appcontext(close_db)
-    app.init_db()
+    if os.path.exists(db_path):
+        app.get_db()
+    else:
+        app.init_db()
