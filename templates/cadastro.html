@@ -23,7 +23,36 @@
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" required />
 
-        <button type="submit">CADASTRAR</button>
+        <label for="confirmar_senha">Confirmar Senha:</label>
+        <input
+          type="password"
+          id="confirmar_senha"
+          name="confirmar_senha"
+          required
+        />
+
+        <label for="departamento">Departamento:</label>
+        <select id="departamento" name="departamento" required>
+          <option value="" disabled selected>Departamento</option>
+          <option value="revenue">Revenue</option>
+          <option value="previdência">Previdência</option>
+          <option value="estrategia-e-performance">
+            Estratégia e Performance
+          </option>
+          <option value="estratégias-quantitativas">
+            Estratégias Quantitativas
+          </option>
+          <option value="fp&a">FP&A</option>
+          <option value="open-finance">Open Finance</option>
+          <option value="arquitetura-mobile">Arquitetura Mobile</option>
+          <option value="gestão-de-ativos">Gestão de Ativos</option>
+          <option value="comunidade-e-colaboracao">
+            Comunidade e Colaboração
+          </option>
+          <option value="outro">Outro</option>
+        </select>
+
+        <button type="submit">REGISTRAR</button>
       </form>
     </div>
   </body>
