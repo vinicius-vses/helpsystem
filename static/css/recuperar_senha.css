@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Lucida Console', Monaco, monospace;
+    background: linear-gradient(135deg, #d3a4f5 30%, #a7f4d8 70%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #c5e0f4;
+    border-radius: 10px;
+    border: 2px solid #666;
+    color: #333;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    width: 48%;
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-login {
+    background-color: #a7eed1;
+}
+
+#btn-register {
+    background-color: #e1d4f7;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.forgot-password a {
+    color: #555;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 12px;
+    background-color: #d086d8;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #9a7fb8;
+  }
+
+#btn-reset {
+    background-color: #ffcccb;
+    color: #333;
+    font-weight: bold;
+}

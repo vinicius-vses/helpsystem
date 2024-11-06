@@ -87,23 +87,6 @@ button:hover {
     background-color: #9a7fb8;
 }
 
-.back-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 12px 20px;
-    background-color: #b8a9dc;
-    color: #fff;
-    font-size: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.back-button:hover {
-    background-color: #6f97b3;
-}
-
 .form-container {
     background-color: #e6f0f4;
     border-radius: 10px;

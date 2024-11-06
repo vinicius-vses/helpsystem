@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperação de Senha</title>
+    <link rel="stylesheet" href="/static/css/recuperar_senha.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="login.html" class="back-button">Voltar</a>
+      <h1 id="header-logo">Recuperar Senha</h1>
+
+      <form class="login-form" aria-labelledby="reset-password-title">
+        <label for="email">Digite seu E-mail:</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Preencha seu e-mail"
+          required
+        />
+
+        <button id="btn-reset" type="submit">Enviar link de recuperação</button>
+      </form>
+    </div>
+  </body>
+</html>
