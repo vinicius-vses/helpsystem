@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/login.css" />
-    <!--<script src=""></script>-->
   </head>
   <body>
     <div class="container">
       <h1 id="header-logo">HELP SYSTEM</h1>
 
-      <form class="login-form" aria-labelledby="login-title">
+      <form class="login-form" aria-labelledby="login-title" action={{ url_for('auth.login') }}" method="POST"></form>>
         <label for="email">E-mail:</label>
         <input
           id="email"
