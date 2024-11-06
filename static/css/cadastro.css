@@ -13,6 +13,10 @@ body {
   background: linear-gradient(135deg, #d3a4f5 30%, #a7f4d8 70%);
 }
 
+html {
+  min-height: 100%;
+}
+
 .container {
   background-color: #f0f8ff;
   padding: 15px 25px;

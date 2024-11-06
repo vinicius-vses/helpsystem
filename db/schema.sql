@@ -2,12 +2,20 @@ CREATE TABLE usuarios (
     id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     sobrenome TEXT NOT NULL,
+    id_departamento INTEGER,
     email TEXT NOT NULL UNIQUE,
-    senha TEXT NOT NULL
+    senha TEXT NOT NULL,
+    FOREIGN KEY (id_departamento) REFERENCES departamentos(id_departamento)
 );
 
 CREATE TABLE categorias (
     id_categoria INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    descricao TEXT
+);
+
+CREATE TABLE departamentos (
+    id_departamento INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     descricao TEXT
 );
@@ -18,7 +26,7 @@ CREATE TABLE solicitacoes (
     id_categoria INTEGER NOT NULL,
     titulo TEXT NOT NULL,
     descricao TEXT,
-    status TEXT DEFAULT 'Não Resolvida', -- ENUM substituído por TEXT com valor padrão
+    status TEXT DEFAULT 'Não Resolvida',
     data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)

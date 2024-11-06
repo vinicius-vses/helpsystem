@@ -110,6 +110,10 @@ button:hover {
     transition: background-color 0.3s;
   }
   
+  html {
+    min-height: 100%;
+}
+
   .back-button:hover {
     background-color: #9a7fb8;
   }
