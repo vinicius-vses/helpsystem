@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help System</title>
-    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/index.css" />
 </head>
 <body>
-    <header>
-        <h1>HELP SYSTEM</h1>
+    <header class="navbar">
+        <div class="logo">
+            <h1>HELP SYSTEM</h1>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar">
+            <button class="search-button">🔍</button>
+            <button class="filter-button">Filtros</button>
+        </div>
+
+        <div class="user-info">
+            <img src="/src/static/img/user-profile-pic.png" alt="Foto do Usuário" class="user-photo">
+            <span class="user-name">Nome do Usuário</span>
+        </div>
     </header>
+
     <div class="container">
         <a href="pergunta.html" class="ask-button">FAZER UMA PERGUNTA!</a>
         
-        <div class="search-bar">
-            <input type="text" placeholder="Pesquisar">
-            <span class="search-icon">🔍</span>
-        </div>
-        
         <div class="questions-list">
             <div class="question-box">
-                <a href="#" class="question-link">Qual é a diferença entre front-end e back-end?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
-            </div>
-            <div class="question-box">
-                <a href="#" class="question-link">Como centraliza uma div?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
-            </div>
-            <div class="question-box">
                 <a href="#" class="question-link">Como envio um e-mail assinado pela empresa?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
+                <span class="info">Enviado por: Usuário3 às 09:05 14/08/2024</span>
             </div>
             <div class="question-box">
                 <a href="#" class="question-link">Quais são as práticas recomendadas para escrever um código limpo?</a>
-                <span class="info">Enviado por: XXXXX às XX:XX xx/xx/xxxx</span>
+                <span class="info">Enviado por: Usuário4 às 13:30 15/08/2024</span>
+            </div>
+            <div class="question-box">
+                <a href="#" class="question-link">Como posso melhorar a responsividade do meu site?</a>
+                <span class="info">Enviado por: Usuário5 às 08:45 16/08/2024</span>
+            </div>
+            <div class="question-box">
+                <a href="#" class="question-link">O que é e para que serve o framework Flask?</a>
+                <span class="info">Enviado por: Usuário6 às 12:00 17/08/2024</span>
+            </div>
+            <div class="question-box">
+                <a href="#" class="question-link">Quais são as melhores práticas para usar Git?</a>
+                <span class="info">Enviado por: Usuário7 às 15:25 18/08/2024</span>
             </div>
         </div>
     </div>

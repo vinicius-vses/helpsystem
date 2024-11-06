@@ -13,16 +13,79 @@ body {
     color: #333;
 }
 
-header {
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    background: #d3a4f5;
+    padding: 15px 20px;
+    background: #3d2f5d;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-    font-size: 2em;
-    color: #3d2f5d;
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-container input {
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #333;
+    width: 200px;
+}
+
+.search-button,
+.filter-button {
+    background-color: #3d2f5d;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-button:hover,
+.filter-button:hover {
+    background-color: #555;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-photo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-name {
+    color: #fff;
+    font-weight: bold;
 }
 
 .container {
@@ -31,6 +94,7 @@ header h1 {
     background: linear-gradient(135deg, #e0ecfc, #cbf0e1);
     border-radius: 10px;
     padding: 20px;
+    margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -56,46 +120,10 @@ header h1 {
     background: linear-gradient(135deg, #9a7fb8, #5e4972);
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    background: #fff;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
-.search-bar input {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 1em;
-}
-
-.search-icon {
-    font-size: 1.2em;
-    color: #888;
-}
-
 .questions-list {
     max-height: 400px;
     overflow-y: auto;
     padding-right: 10px;
-    position: relative;
-}
-
-.questions-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.questions-list::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-}
-
-.questions-list::-webkit-scrollbar-track {
-    background: #e0ecfc;
 }
 
 .question-box {
@@ -104,9 +132,6 @@ header h1 {
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .question-link {
