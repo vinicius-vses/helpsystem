@@ -46,6 +46,23 @@ CREATE TABLE respostas (
 CREATE TABLE ranking (
     id_usuario INTEGER PRIMARY KEY,
     pontos_totais INTEGER DEFAULT 0,
-    nivel_proatividade INTEGER DEFAULT 0,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
+
+CREATE TRIGGER atualizar_pontuacao_apos_resposta
+AFTER INSERT ON respostas
+FOR EACH ROW
+BEGIN
+    UPDATE ranking
+    SET pontos_totais = pontos_totais + NEW.pontos
+    WHERE id_usuario = NEW.id_usuario;
+END;
+
+CREATE TRIGGER atualizar_pontuacao_apos_edicao_resposta
+AFTER UPDATE OF pontos ON respostas
+FOR EACH ROW
+BEGIN
+    UPDATE ranking
+    SET pontos_totais = pontos_totais + (NEW.pontos - OLD.pontos)
+    WHERE id_usuario = NEW.id_usuario;
+END;

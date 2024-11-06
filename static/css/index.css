@@ -187,3 +187,10 @@ body {
     font-size: 0.8em;
     color: #666;
 }
+
+.status.nao-resolvido {
+    color: red;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
