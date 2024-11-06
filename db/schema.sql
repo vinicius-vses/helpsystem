@@ -33,7 +33,6 @@ CREATE TABLE solicitacoes (
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
 
-
 CREATE TABLE respostas (
     id_resposta INTEGER PRIMARY KEY AUTOINCREMENT,
     id_solicitacao INTEGER NOT NULL,
