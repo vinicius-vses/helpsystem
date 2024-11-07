@@ -59,3 +59,27 @@ BEGIN
     SET pontos_totais = pontos_totais + NEW.pontos
     WHERE id_usuario = NEW.id_usuario;
 END;
+
+INSERT INTO departamentos (nome, descricao) VALUES ('Recursos Humanos', 'Departamento de RH');
+INSERT INTO departamentos (nome, descricao) VALUES ('TI', 'Departamento de Tecnologia da Informação');
+INSERT INTO departamentos (nome, descricao) VALUES ('Financeiro', 'Departamento de Finanças');
+
+INSERT INTO usuarios (nome, sobrenome, id_departamento, email, senha) VALUES ('João', 'Silva', 1, 'joao.silva@empresa.com', 'senha123');
+INSERT INTO usuarios (nome, sobrenome, id_departamento, email, senha) VALUES ('Marcos', 'Oliveira', 2, 'maria.oliveira@empresa.com', 'senha456');
+INSERT INTO usuarios (nome, sobrenome, id_departamento, email, senha) VALUES ('Lucas', 'Santos', 3, 'carlos.santos@empresa.com', 'senha789');
+
+INSERT INTO categorias (nome, descricao) VALUES ('Hardware', 'Problemas relacionados a hardware');
+INSERT INTO categorias (nome, descricao) VALUES ('Software', 'Problemas relacionados a software');
+INSERT INTO categorias (nome, descricao) VALUES ('Administração', 'Questões administrativas');
+
+INSERT INTO solicitacoes (id_usuario, id_categoria, titulo, descricao, status) VALUES (1, 1, 'Computador não liga', 'Meu computador não está ligando.', 0);
+INSERT INTO solicitacoes (id_usuario, id_categoria, titulo, descricao, status) VALUES (2, 2, 'Erro no sistema', 'Erro ao tentar acessar o sistema financeiro.', 0);
+INSERT INTO solicitacoes (id_usuario, id_categoria, titulo, descricao, status) VALUES (3, 3, 'Solicitação de reembolso', 'Preciso de um reembolso para despesas de viagem.', 0);
+
+INSERT INTO respostas (id_solicitacao, id_usuario, resposta, pontos) VALUES (1, 2, 'Verifique se o cabo de energia está conectado.', 5);
+INSERT INTO respostas (id_solicitacao, id_usuario, resposta, pontos) VALUES (2, 1, 'Tente reiniciar o sistema e limpar o cache.', 3);
+INSERT INTO respostas (id_solicitacao, id_usuario, resposta, pontos) VALUES (3, 2, 'Envie a documentação para o setor financeiro.', 4);
+
+INSERT INTO ranking (id_usuario, pontos_totais, nivel_proatividade) VALUES (1, 10, 1);
+INSERT INTO ranking (id_usuario, pontos_totais, nivel_proatividade) VALUES (2, 12, 2);
+INSERT INTO ranking (id_usuario, pontos_totais, nivel_proatividade) VALUES (3, 8, 1);

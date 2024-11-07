@@ -152,13 +152,15 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 800px;
+    min-width: 300px;
     background: linear-gradient(135deg, #e0ecfc, #cbf0e1);
     border-radius: 10px;
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 @media (max-width: 1024px) {
     .container {
