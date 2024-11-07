@@ -5,7 +5,8 @@
 <ul>
   <li><strong>Product Owners (PO):</strong> Murilo Paiva (Formador Specialisterne)</li>
   <li><strong>Scrum Master:</strong> Marcelo Cervino</li>
-  <li><strong>Programadores:</strong> Marcos de Camargo, Raquel Moriconi, Vinícius Souza</li>
+  <li><strong>Prototipadora:</strong> Raquel Moriconi</li>
+  <li><strong>Programadores:</strong> Marcos de Camargo, Vinícius Souza</li>
 </ul>
 
 <h2>Requisitos Funcionais</h2>
