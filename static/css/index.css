@@ -138,8 +138,8 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 800px;
+    width: 95%;
+    max-width: 90%;
     background: linear-gradient(135deg, #e0ecfc, #cbf0e1);
     border-radius: 10px;
     padding: 20px;
