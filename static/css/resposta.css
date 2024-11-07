@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e0ecfc;
+    color: #333;
+}
+
+header {
+    background-color: #a7a1d9;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    background: linear-gradient(135deg, #b8e4dc, #e0ecfc);
+    padding: 20px;
+    border-radius: 15px;
+    width: 150px;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-avatar {
+    background: #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+}
+
+.user-info h3 {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.question-section {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.question-section h2 {
+    font-size: 1.2em;
+    color: #3d2f5d;
+    margin-bottom: 10px;
+}
+
+.question-section p {
+    font-size: 1em;
+    color: #333;
+}
+
+.toolbar {
+    display: flex;
+    gap: 5px;
+}
+
+.toolbar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 5px;
+    color: #666;
+}
+
+.attachment {
+    margin-left: auto;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    resize: none;
+    font-family: inherit;
+}
+
+.send-button {
+    align-self: flex-end;
+    background: #7a68a2;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.send-button:hover {
+    background: #5e4972;
+}
