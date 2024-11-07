@@ -33,7 +33,37 @@ body {
 .logo h1 {
     font-size: 2em;
     color: white;
+    margin-bottom: 5%;
+}
 
+.user-dropdown h4{
+    color: black;
+    font: bold;
+}
+
+.user-dropdown p {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: green;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+.user-dropdown a {
+    background-color: #d086d8;
+    color: white;
+    margin-top: 5%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 8px; 
+    transition: background-color 0.3s; 
+}
+
+.user-dropdown a:hover {
+    background-color: #3d2f5d;
 }
 
 .search-container {
@@ -128,13 +158,14 @@ body {
     text-align: center;
     margin-left: 10%;
     color: #ffffff; 
+    cursor: pointer;
 }
 
 .user-photo {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    margin-bottom: 5px;
+    margin-bottom: 10%;
 }
 
 .container {
@@ -233,3 +264,29 @@ body {
         flex-direction: row;
     }
 }
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  .user-dropdown a {
+    display: block;
+    padding: 8px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .user-dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+  

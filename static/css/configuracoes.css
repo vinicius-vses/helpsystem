@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d3a4f5 30%, #a7f4d8 70%);
+    color: #333;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #3b3b3b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.configuracoes {
+    text-align: center;
+}
+
+.configuracoes h2 {
+    font-size: 1.5em;
+    color: #000;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #f1f8fb;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-perfil {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.foto-perfil img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.foto-perfil p {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.informacoes {
+    width: 100%;
+}
+
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.campo label {
+    flex: 1;
+    font-weight: bold;
+    color: #3b3b3b;
+}
+
+.campo input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    min-width: 180px;
+}
+
+.editar {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d3a4f5;
+    color: #3b3b3b;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s;
+    margin-top: 5px;
+}
+
+.editar:hover {
+    background-color: #b8a9dc;
+}
+
+.excluir {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #cc0707;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.excluir:hover {
+    background-color: #a50000;
+}

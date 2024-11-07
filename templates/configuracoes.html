@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="/static/css/configuracoes.css">
+    <link rel="icon" type="image/png" href="/src/static/img/favicon.png">
+</head>
+<body>
+    <header>
+        <h1>HELP SYSTEM</h1>
+    </header>
+    <main>
+        <section class="configuracoes">
+            <h2>CONFIGURAÇÕES</h2>
+            <div class="container">
+                <div class="foto-perfil">
+                    <img src="/static/img/user-profile-pic.png" alt="Foto de perfil">
+                    <p>Alterar foto</p>
+                </div>
+                <div class="informacoes">
+                    <div class="campo">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" value="Marcelo" readonly>
+                        <button class="editar">Editar</button>
+                    </div>
+                    <div class="campo">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" value="Cervino" readonly>
+                        <button class="editar">Editar</button>
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" value="Cervino@helpsystem" readonly>
+                        <button class="editar">Editar</button>
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" value="**********" readonly>
+                        <button class="editar">Editar</button>
+                    </div>
+                </div>
+                <button class="excluir">Excluir conta</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

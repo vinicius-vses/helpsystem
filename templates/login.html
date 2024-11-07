@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/login.css" />
-  </head>
-  <body>
+    <link rel="icon" type="image/png" href="/src/static/img/favicon.png" />
+</head>
+<body>
     <div class="container">
-      <h1 id="header-logo">HELP SYSTEM</h1>
+        <h1 id="header-logo">HELP SYSTEM</h1>
 
-      <form class="login-form" aria-labelledby="login-title" action={{ url_for('auth.login') }}" method="POST"></form>>
-        <label for="email">E-mail:</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Preencha o e-mail"
-          required
-        />
+        <form class="login-form" aria-labelledby="login-title" action="{{ url_for('auth.login') }}" method="POST">
+            <label for="email">E-mail:</label>
+            <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Preencha o e-mail"
+                required
+            />
 
-        <label for="password">Senha:</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Preencha a senha"
-          required
-        />
+            <label for="password">Senha:</label>
+            <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Preencha a senha"
+                required
+            />
 
-        <div class="button-group">
-          <button id="btn-login" type="submit">Login</button>
-          <button
-              id="btn-register"
-              type="button"
-              onclick="window.location.href='{{ url_for('main.cadastro') }}';"
-          >
-              Cadastro
-          </button>
-        </div>
+            <div class="button-group">
+                <button id="btn-login" type="submit">Login</button>
+                <button
+                    id="btn-register"
+                    type="button"
+                    onclick="window.location.href='cadastro.html'"
+                >
+                    Cadastro
+                </button>
+            </div>
 
-
-
-
-        <p class="forgot-password">
-          <a href="recupera-senha.html">Esqueceu sua senha? Clique aqui</a>
-        </p>
-      </form>
+            <p class="forgot-password">
+                <a href="recupera-senha.html">Esqueceu sua senha? Clique aqui</a>
+            </p>
+        </form>
     </div>
-  </body>
+</body>
 </html>
