@@ -60,17 +60,35 @@ BEGIN
     WHERE id_usuario = NEW.id_usuario;
 END;
 
-INSERT INTO departamentos (nome, descricao) VALUES ('Recursos Humanos', 'Departamento de RH');
-INSERT INTO departamentos (nome, descricao) VALUES ('TI', 'Departamento de Tecnologia da Informação');
-INSERT INTO departamentos (nome, descricao) VALUES ('Financeiro', 'Departamento de Finanças');
-
 INSERT INTO usuarios (nome, sobrenome, id_departamento, email, senha) VALUES ('João', 'Silva', 1, 'joao.silva@empresa.com', 'senha123');
 INSERT INTO usuarios (nome, sobrenome, id_departamento, email, senha) VALUES ('Marcos', 'Oliveira', 2, 'maria.oliveira@empresa.com', 'senha456');
 INSERT INTO usuarios (nome, sobrenome, id_departamento, email, senha) VALUES ('Lucas', 'Santos', 3, 'carlos.santos@empresa.com', 'senha789');
 
-INSERT INTO categorias (nome, descricao) VALUES ('Hardware', 'Problemas relacionados a hardware');
-INSERT INTO categorias (nome, descricao) VALUES ('Software', 'Problemas relacionados a software');
-INSERT INTO categorias (nome, descricao) VALUES ('Administração', 'Questões administrativas');
+INSERT INTO departamentos (nome, descricao) VALUES ('Revenue', 'Departamento de Receita');
+INSERT INTO departamentos (nome, descricao) VALUES ('Previdência', 'Departamento de Previdência');
+INSERT INTO departamentos (nome, descricao) VALUES ('Estratégia e Performance', 'Departamento de Estratégia e Performance');
+INSERT INTO departamentos (nome, descricao) VALUES ('Estratégias Quantitativas', 'Departamento de Estratégias Quantitativas');
+INSERT INTO departamentos (nome, descricao) VALUES ('FP&A', 'Departamento de FP&A');
+INSERT INTO departamentos (nome, descricao) VALUES ('Open Finance', 'Departamento de Open Finance');
+INSERT INTO departamentos (nome, descricao) VALUES ('Arquitetura Mobile', 'Departamento de Arquitetura Mobile');
+INSERT INTO departamentos (nome, descricao) VALUES ('Gestão de Ativos', 'Departamento de Gestão de Ativos');
+INSERT INTO departamentos (nome, descricao) VALUES ('Comunidade e Colaboração', 'Departamento de Comunidade e Colaboração');
+INSERT INTO departamentos (nome, descricao) VALUES ('Outro', 'Outro departamento');
+
+INSERT INTO categorias (nome, descricao) VALUES ('Conta e Cadastro', 'Questões relacionadas à conta e cadastro de usuários');
+INSERT INTO categorias (nome, descricao) VALUES ('Pagamentos e Faturamento', 'Dúvidas e problemas com pagamentos e faturamento');
+INSERT INTO categorias (nome, descricao) VALUES ('Configurações e Preferências', 'Configurações e preferências de usuário');
+INSERT INTO categorias (nome, descricao) VALUES ('Técnico e Solução de Problemas', 'Soluções para problemas técnicos');
+INSERT INTO categorias (nome, descricao) VALUES ('Segurança e Privacidade', 'Questões de segurança e privacidade de dados');
+INSERT INTO categorias (nome, descricao) VALUES ('Funcionalidades e Recursos', 'Funcionalidades e recursos disponíveis');
+INSERT INTO categorias (nome, descricao) VALUES ('Suporte e Atendimento ao Cliente', 'Atendimento ao cliente e suporte');
+INSERT INTO categorias (nome, descricao) VALUES ('Integrações e APIs', 'Integrações e uso de APIs');
+INSERT INTO categorias (nome, descricao) VALUES ('Feedback e Sugestões', 'Feedback e sugestões de usuários');
+INSERT INTO categorias (nome, descricao) VALUES ('Comunidade e Colaboração', 'Comunidade e colaboração entre usuários');
+INSERT INTO categorias (nome, descricao) VALUES ('Documentação e Tutoriais', 'Documentação e tutoriais para usuários');
+INSERT INTO categorias (nome, descricao) VALUES ('Atualizações e Novidades', 'Novidades e atualizações do sistema');
+INSERT INTO categorias (nome, descricao) VALUES ('Políticas e Termos de Uso', 'Informações sobre políticas e termos de uso');
+INSERT INTO categorias (nome, descricao) VALUES ('Outro', 'Outras categorias não especificadas');
 
 INSERT INTO solicitacoes (id_usuario, id_categoria, titulo, descricao, status) VALUES (1, 1, 'Computador não liga', 'Meu computador não está ligando.', 0);
 INSERT INTO solicitacoes (id_usuario, id_categoria, titulo, descricao, status) VALUES (2, 2, 'Erro no sistema', 'Erro ao tentar acessar o sistema financeiro.', 0);
