@@ -32,13 +32,16 @@
         <div class="button-group">
           <button id="btn-login" type="submit">Login</button>
           <button
-            id="btn-register"
-            type="button"
-            onclick="window.location.href='cadastro.html'"
+              id="btn-register"
+              type="button"
+              onclick="window.location.href='{{ url_for('main.cadastro') }}';"
           >
-            Cadastro
+              Cadastro
           </button>
         </div>
+
+
+
 
         <p class="forgot-password">
           <a href="recupera-senha.html">Esqueceu sua senha? Clique aqui</a>

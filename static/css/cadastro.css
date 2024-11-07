@@ -93,3 +93,25 @@ button {
 button:hover {
   background-color: #b299d3;
 }
+
+.alert-container {
+  display: none;
+  margin-bottom: 15px;
+}
+
+/* Style the alert messages */
+.alert {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.alert.success {
+  background-color: #28a745;
+  color: white;
+}
+
+.alert.danger {
+  background-color: #dc3545;
+  color: white;
+}
