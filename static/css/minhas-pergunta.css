@@ -100,17 +100,18 @@ h1{
 
 .back-button {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 12px 20px;
-    background-color: #b8a9dc;
+    top: 15px;
+    left: 15px;
+    padding: 8px 12px;
+    background-color: #d086d8;
     color: #fff;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-}
-.back-button:hover {
-    background-color: #6f97b3;
-}
+  }
+  
+  .back-button:hover {
+    background-color: #9a7fb8;
+  }
