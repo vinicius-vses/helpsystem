@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
     <link rel="stylesheet" href="/static/css/cadastro.css" />
+    <link rel="icon" type="image/png" href="/src/static/img/favicon.png">
   </head>
   <body>
     <div class="container">
       <a href="login.html" class="back-button">Voltar</a>
       <h1>CADASTRO</h1>
-      <form  action={{ url_for('main.cadastro') }}" method="POST">
+      <form action="{{ url_for('main.cadastro') }}" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required />
 
