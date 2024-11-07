@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, jsonify, render_template, request,redirect, url_for
 from . import db
 from flasgger import Swagger
+from .models import Usuario
 import os
 
 
@@ -41,8 +42,13 @@ def get_users():
 
 @api.route("/api", methods=["GET"])
 def criar_usuario():
-    usuario = {"id": 5, "nome": "Teste","sobrenome":"Specialisterne", "email": "teste@email.com"},
-    return jsonify(usuario), 201
+    #usuario_teste = {"id": 5, "nome": "Teste","sobrenome":"Specialisterne", "email": "teste@email.com"},
+    #return jsonify(usuario_teste), 201
+    data = request.json
+    novo_usuario = Usuario(nome = data['nome'], sobrenome = data['sobrenome'], email=data['email'], senha = data['senha'], confirmar_senha = data['confirmar_senha'], departamento = data['departamento'])
+    db.session.add(novo_usuario)
+    db.session.commit()
+    return jsonify({"message": "User created", "nome" : novo_usuario.nome, "sobrenome" : novo_usuario.sobrenome, "email": novo_usuario.email , "senha" : novo_usuario.senha, "confirmar_senha":novo_usuario.confirmar_senha, "departamento":novo_usuario.departamento}), 201
 
 
 @main.route('/', methods=["GET"])
@@ -56,9 +62,9 @@ def register():
         nome = request.form["nome"]
         sobrenome = request.form["sobrenome"]
         email = request.form["email"]
-        password = request.form["senha"]
+        senha = request.form["senha"]
         confirmar_senha = request.form["confirmar_senha"]
         departamento = request.form["departamento"]
-        print(f"Nome= {nome}, Sobrenome = {sobrenome}, Email = {email}, Senha = {password}, Verificar senha = {confirmar_senha}, Departamento = {departamento}")
+        print(f"Nome= {nome}, Sobrenome = {sobrenome}, Email = {email}, Senha = {senha}, Verificar senha = {confirmar_senha}, Departamento = {departamento}")
         return redirect(url_for('auth.login'))
     return render_template('cadastro.html')
