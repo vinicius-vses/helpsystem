@@ -5,134 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/index.css" />
-    <link rel="icon" type="image/png" href="/src/static/img/favicon.png">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
   </head>
   <body>
-    <header class="navbar">
-      <div class="logo">
-        <h1>HELP SYSTEM</h1>
-      </div>
+    <form method="POST" action="{{ url_for('main.index') }}"></form>
+    <div class="search-container">
+      <input type="text" placeholder="Pesquisar" id="pesquisa", name="pesquisa" />
+      <button class="search-button">🔍</button>
+    </div>
+    </form>
+    <div class="user-info">
+      <img
+        src="{{ url_for('static', filename='img/user-profile-pic.png') }}"
+        alt="Foto do Usuário"
+        class="user-photo"
+      />
+      <span class="user-name" id="user-dropdown-toggle">Nome do Usuário</span>
 
-      <div class="search-container">
-        <input type="text" placeholder="Pesquisar" />
-        <button class="search-button">🔍</button>
-      </div>
-
-      <div class="user-info">
-        <img
-          src="/src/static/img/user-profile-pic.png"
-          alt="Foto do Usuário"
-          class="user-photo"
-        />
-        <span class="user-name" id="user-dropdown-toggle">Nome do Usuário</span>
-
-        <div class="user-dropdown" id="user-dropdown">
-          <h4>Meus Pontos:</h4>
-          <p>10 Pontos</p>
-          <a href="minhas-perguntas.html">Minhas perguntas</a>
-          <a href="ranking.html">Ranking</a>
-          <a href="configuracoes.html">Configurações</a>
-          <a href="login.html">Sair</a>
-        </div>
-      </div>
-
-      <div class="filters-dropdown">
-        <select name="category-filter" class="filter-select">
-          <option value="" disabled selected>Categoria</option>
-          <option value="conta-e-cadastro">Conta e Cadastro</option>
-          <option value="pagamentos-e-faturamento">
-            Pagamentos e Faturamento
-          </option>
-          <option value="configuracoes-e-preferencias">
-            Configurações e Preferências
-          </option>
-          <option value="tecnico-e-solucao-de-problemas">
-            Técnico e Solução de Problemas
-          </option>
-          <option value="seguranca-e-privacidade">
-            Segurança e Privacidade
-          </option>
-          <option value="funcionalidades-e-recursos">
-            Funcionalidades e Recursos
-          </option>
-          <option value="suporte-e-atendimento-ao-cliente">
-            Suporte e Atendimento ao Cliente
-          </option>
-          <option value="integracoes-e-apis">Integrações e APIs</option>
-          <option value="feedback-e-sugestoes">Feedback e Sugestões</option>
-          <option value="comunidade-e-colaboracao">
-            Comunidade e Colaboração
-          </option>
-          <option value="documentacao-e-tutoriais">
-            Documentação e Tutoriais
-          </option>
-          <option value="atualizacoes-e-novidades">
-            Atualizações e Novidades
-          </option>
-          <option value="politicas-e-termos-de-uso">
-            Políticas e Termos de Uso
-          </option>
-          <option value="outro">Outro</option>
-        </select>
-
-        <select name="status-filter" class="filter-select">
-          <option value="" disabled selected>Status</option>
-          <option value="nao-resolvido">Não Resolvido</option>
-          <option value="resolvido">Resolvido</option>
-        </select>
-
-        <select name="colaborador-filter" class="filter-select">
-          <option value="" disabled selected>Colaborador</option>
-          <option value="usuario1">Usuário1</option>
-          <option value="usuario2">Usuário2</option>
-        </select>
-      </div>
-
-      <button class="filter-button">Filtrar</button>
-    </header>
-
-    <div class="container">
-      <a href="pergunta.html" class="ask-button">FAZER UMA PERGUNTA!</a>
-
-      <div class="questions-list">
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Como envio um e-mail assinado pela empresa?</a
-          >
-          <span class="info">Enviado por: Usuário3 às 09:05 14/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Quais são as práticas recomendadas para escrever um código
-            limpo?</a
-          >
-          <span class="info">Enviado por: Usuário4 às 13:30 15/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Como posso melhorar a responsividade do meu site?</a
-          >
-          <span class="info">Enviado por: Usuário5 às 08:45 16/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >O que é e para que serve o framework Flask?</a
-          >
-          <span class="info">Enviado por: Usuário6 às 12:00 17/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Quais são as melhores práticas para usar Git?</a
-          >
-          <span class="info">Enviado por: Usuário7 às 15:25 18/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
+      <div class="user-dropdown" id="user-dropdown">
+        <h4>Meus Pontos:</h4>
+        <p>10 Pontos</p>
+        <a href="{{ url_for('main.lista_perguntas') }}">Minhas perguntas</a>
+        <a href="{{ url_for('main.ranking') }}"">Ranking</a>
+        <a href="{{ url_for('main.ranking') }}">Configurações</a>
+        <a href="{{ url_for('auth.logout') }}">Sair</a>
       </div>
     </div>
+
+    <form method="POST" action="{{ url_for('main.index') }}"></form>
+    <div class="filters-dropdown">
+      <select name="filtro_categoria" id="filtro_categoria" class="filter-select">
+        <option value="" disabled selected>Categoria</option>
+        {% for categoria in categorias %}
+            <option value="{{ categoria.id_categoria }}" {% if categoria.id_categoria == filtro_categoria %}selected{% endif %}>{{ categoria.nome }}</option>
+        {% endfor %}
+      </select>
+
+      <select name="filtro_status" id="filtro_status" class="filter-select">
+        <option value="" disabled selected>Status</option>
+        <option value="0" {% if filtro_status == '0' %}selected{% endif %}>Pendente</option>
+        <option value="1" {% if filtro_status == '1' %}selected{% endif %}>Resolvido</option>
+      </select>
+
+      <select name="filtro_colaborador" id="filtro_colaborador" class="filter-select">
+        <option value="" disabled selected>Colaborador</option>
+        {% for colaborador in usuarios %}
+            <option value="{{ colaborador.id_usuario }}" {% if colaborador.id_usuario == filtro_categoria %}selected{% endif %}>{{ colaborador.nome + ' ' + colaborador.sobrenome }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button class="filter-button">Filtrar</button>
+  </form>
+
+  </header>
+    <div class="container">
+      <a href="{{ url_for('main.pergunta') }}" class="ask-button">FAZER UMA PERGUNTA!</a>
+
+    {% if solicitacoes %}
+    <div class="questions-list">
+        {% for solicitacao in solicitacoes %}
+            <div class="question-box">
+                <a href="#" class="question-link">{{ solicitacao.titulo }}</a>
+                <span class="info">
+                    Enviado por: {{ solicitacao.usuario.nome }} {{ solicitacao.usuario.sobrenome }}
+                    às {{ solicitacao.data_criacao.strftime('%H:%M %d/%m/%Y') }}
+                </span>
+                <span class="status
+                    {% if solicitacao.status == 0 %}
+                        Pendente
+                    {% else %}
+                        Resolvido
+                    {% endif %}
+                ">
+                    Status:
+                    {% if solicitacao.status == 0 %}
+                        Pendente
+                    {% else %}
+                        Resolvido
+                    {% endif %}
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+      {% else %}
+        <p>Nenhuma solicitação encontrada.</p>
+      {% endif %}
+  </div>
   </body>
   <script src="/static/js/script.js"></script>
 </html>

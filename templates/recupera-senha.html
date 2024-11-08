@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recuperação de Senha</title>
     <link rel="stylesheet" href="/static/css/recupera-senha.css" />
-    <link rel="icon" type="image/png" href="/src/static/img/favicon.png">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
   </head>
   <body>
     <div class="container">
-      <a href="login.html" class="back-button">Voltar</a>
+      <a href="{{ url_for('auth.recuperar_senha') }}">Esqueceu sua senha? Clique aqui</a>
+
       <h1 id="header-logo">Recuperar Senha</h1>
 
       <form class="login-form" aria-labelledby="reset-password-title">

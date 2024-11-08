@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/resposta.css" />
-    <link rel="icon" type="image/png" href="/src/static/img/favicon.png">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
     <link
       href="https://cdn.jsdelivr.net/npm/quill@1.3.6/dist/quill.snow.css"
       rel="stylesheet"
@@ -16,12 +16,12 @@
     <header>
       <h1>HELP SYSTEM</h1>
     </header>
-    <a href="index.html" class="back-button">Voltar</a>
+    <a href="{{ url_for('main.index') }}" class="back-button">Voltar</a>
     <main>
       <div class="content">
         <aside class="user-info">
           <img
-            src="/src/static/img/user-profile-pic.png"
+            src="{{ url_for('static', filename='img/user-profile-pic.png') }}"
             alt="Foto do Usuário"
             class="user-photo"
           />
