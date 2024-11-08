@@ -26,7 +26,7 @@
         />
         <span class="user-name" id="user-dropdown-toggle">Nome do Usuário</span>
 
-        <div class="user-dropdown" id="user-dropdown">
+        <div class="user-dropdown" id="user-dropdown" >
           <h4>Meus Pontos:</h4>
           <p>10 Pontos</p>
           <a href="{{ url_for('main.lista_perguntas') }}">Minhas perguntas</a>
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <div class="filters-dropdown">
+      <div class="filters-dropdown" id="filters-dropdown>
         <select name="filtro_categoria" id="filtro_categoria" class="filter-select">
           <option value="" disabled selected>Categoria</option>
           {% for categoria in categorias %}
@@ -57,7 +57,7 @@
           {% endfor %}
         </select>
       </div>
-      <button class="filter-button">Filtrar</button>
+      <button class="filter-button" id="filters-dropdown-toggle">Filtrar</button>
     </form>
 
     </header>
@@ -96,5 +96,5 @@
       </div>
 
   </body>
-  <script src="/static/js/script.js"></script>
+  <script src="/static/js/drop-down.js"></script>
 </html>
