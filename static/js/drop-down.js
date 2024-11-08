@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const isVisible = dropdownMenu.style.display === "block";
             dropdownMenu.style.display = isVisible ? "none" : "block";
         });
-        
+
         document.addEventListener("click", function () {
             dropdownMenu.style.display = "none";
         });
-    
+
         dropdownMenu.addEventListener("click", function (event) {
             event.stopPropagation();
         });

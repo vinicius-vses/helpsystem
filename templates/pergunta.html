@@ -23,7 +23,10 @@
 +               <option value="{{ categoria.id_categoria }}" {% if categoria.id_categoria == filtro_categoria %}selected{% endif %}>{{ categoria.nome }}</option>
 +                {% endfor %}
             </select>
-            <div id="quillInput"></div>
+            <div>
+                <input type="text" id="descricao" placeholder="Descreva sua pergunta...">
+            </div>
+
             <button type="button" id="submit-button">ENVIAR</button>
         </div>
     </div>

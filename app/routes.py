@@ -6,7 +6,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 import os
 from db import db
 from sqlalchemy.exc import SQLAlchemyError
-
+from sqlalchemy import or_
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -82,6 +82,16 @@ def recuperar_senha():
 def get_users():
     usuarios = db.session.query(Usuario).all()
     return jsonify([usuario.to_dict() for usuario in usuarios])
+
+@api.route("/respostas/all", methods=["GET"])
+def get_answers():
+    respostas = db.session.query(Resposta).all()
+    return jsonify([resposta.to_dict() for resposta in respostas])
+
+@api.route("/perguntas/all", methods=["GET"])
+def get_questionss():
+    perguntas = db.session.query(Solicitacao).all()
+    return jsonify([perguntas.to_dict() for perguntas in perguntas])
 
 @api.route("/usuarios", methods=["GET"])
 def criar_usuario():
@@ -168,33 +178,35 @@ def index():
 
     query = Solicitacao.query
 
-    if request.method == 'POST':
-        filtro_categoria = request.form.get('categoria', None)
-        filtro_status = request.form.get('status', None)
-        filtro_colaborador = request.form.get('colaborador', None)
-        pesquisa = request.form.get('pesquisa', None)
+    filtro_categoria = request.form.get('categoria', None)
+    filtro_status = request.form.get('status', None)
+    filtro_colaborador = request.form.get('colaborador', None)
+    pesquisa = request.form.get('pesquisa', None)
 
-        if filtro_categoria:
-            categoria = Categoria.query.filter_by(nome=filtro_categoria).first()
-            if categoria:
-                query = query.filter(Solicitacao.id_categoria == categoria.id_categoria)
+    if filtro_categoria:
+        categoria = Categoria.query.filter_by(nome=filtro_categoria).first()
+        if categoria:
+            query = query.filter(Solicitacao.id_categoria == categoria.id_categoria)
 
-        if filtro_status:
-            status = 1 if filtro_status == '1' else 0
-            query = query.filter(Solicitacao.status == status)
+    if filtro_status:
+        status = 1 if filtro_status == '1' else 0
+        query = query.filter(Solicitacao.status == status)
 
-        if filtro_colaborador:
-            colaboradores = Usuario.query.filter(
-                (Usuario.nome + ' ' + Usuario.sobrenome).like(f'%{filtro_colaborador}%')
-            ).all()
-            if colaboradores:
-                query = query.filter(Solicitacao.id_usuario.in_([colaborador.id_usuario for colaborador in colaboradores]))
+    if filtro_colaborador:
+        colaboradores = Usuario.query.filter(
+            (Usuario.nome + ' ' + Usuario.sobrenome).like(f'%{filtro_colaborador}%')
+        ).all()
+        if colaboradores:
+            query = query.filter(Solicitacao.id_usuario.in_([colaborador.id_usuario for colaborador in colaboradores]))
 
-        if pesquisa:
-            query = query.filter(Solicitacao.descricao.like(f'%{pesquisa}%'))
+    if pesquisa:
+        query = query.filter(or_(
+            Solicitacao.descricao.like(f'%{pesquisa}%'),
+            Solicitacao.titulo.like(f'%{pesquisa}%')
+        ))
 
 
-        print("Query:",query)
+    print("Query:",query)
 
     solicitacoes = query.all()
 
@@ -260,13 +272,13 @@ def pergunta():
         id_usuario = session["id_usuario"]
         id_categoria = request.form["categoria"]
         titulo = request.form["titulo"]
-        #descricao = request.form["descricao"]
-        #nova_pergunta = Solicitacao(id_usuario=id_usuario, id_categoria=id_categoria, titulo = titulo, descricao=descricao )
+        descricao = request.form["descricao"]
+        nova_pergunta = Solicitacao(id_usuario=id_usuario, id_categoria=id_categoria, titulo = titulo, descricao=descricao )
         try:
             db.session.add(nova_pergunta)
             db.session.commit()
-            print(f"Usuário adicionado: {nova_pergunta.id_solicitacao}")
-            flash("Cadastro realizado com sucesso!", "success")
+            print(f"Pergunta adicionada: {nova_pergunta.id_solicitacao}")
+            flash("Pergunta adicionada com sucesso!", "success")
         except SQLAlchemyError as e:
             db.session.rollback()  # In case of an error, rollback the transaction
             flash(f"Erro ao salvar a pergunta: {str(e)}", 'error')
