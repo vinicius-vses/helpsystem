@@ -47,23 +47,25 @@ print(f"Flask is looking for templates in: {os.path.abspath(app.template_folder)
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     print("Login page requested")
+    error = None
     if request.method == 'POST':
         email = request.form["email"]
         password = request.form["password"]
         print("email",email,"ps",password)
-
         usuario = Usuario.query.filter_by(email=email).first()
         print("usuario",usuario)
         if usuario and check_password_hash(usuario.senha, password):
             session['id_usuario'] = usuario.id_usuario
+            flash('Você fez o login', 'success')
             print(f"Usuário logado: {usuario.nome} {usuario.sobrenome}")
             return redirect(url_for('main.index'))
         else:
             flash('Email ou senha inválido', 'error')
             print('Usuário inválido')
-            return redirect(url_for('auth.login'))
+            error = 'Email ou senha inválido'
+            return render_template('login.html', error=error)
 
-    return render_template('login.html')
+    return render_template('login.html', error=error)
 
 @auth.route('/logout')
 def logout():

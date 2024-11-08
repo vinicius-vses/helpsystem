@@ -11,7 +11,7 @@
     <div class="container">
       <a href="{{ url_for('auth.login') }}" class="back-button">Voltar</a>
       <h1>CADASTRO</h1>
-      {% with messages = get_flashed_messages(with_categories=true) %}
+      <!-- {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
           <div class="alert-container">
             {% for category, message in messages %}
@@ -24,7 +24,21 @@
             {% endfor %}
           </div>
         {% endif %}
-      {% endwith %}
+      {% endwith %} -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class=flashes>
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            <p>{{ message }}</p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
       <form  action="{{ url_for('main.cadastro') }}" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required />
