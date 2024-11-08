@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Help System</title>
-    <link rel="stylesheet" href="/static/css/index.css" />
-    <link rel="icon" type="image/png" href="/src/static/img/favicon.png">
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="logo">
-        <h1>HELP SYSTEM</h1>
-      </div>
 
-      <div class="search-container">
-        <input type="text" placeholder="Pesquisar" />
-        <button class="search-button">🔍</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help System</title>
+  <link rel="stylesheet" href="/static/css/index.css" />
+  <link rel="icon" type="image/png" href="/src/static/img/favicon.png" />
+</head>
 
-      <div class="user-info">
-        <img
-          src="/src/static/img/user-profile-pic.png"
-          alt="Foto do Usuário"
-          class="user-photo"
-        />
-        <span class="user-name" id="user-dropdown-toggle">Nome do Usuário</span>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <h1>HELP SYSTEM</h1>
+    </div>
 
-        <div class="user-dropdown" id="user-dropdown">
-          <h4>Meus Pontos:</h4>
-          <p>10 Pontos</p>
-          <a href="minhas-perguntas.html">Minhas perguntas</a>
-          <a href="ranking.html">Ranking</a>
-          <a href="configuracoes.html">Configurações</a>
-          <a href="login.html">Sair</a>
-        </div>
-      </div>
+    <div class="search-container">
+      <input type="text" placeholder="Pesquisar" />
+      <button class="search-button">🔍</button>
+    </div>
 
-      <div class="filters-dropdown">
+     <div class="filters-container">
+      <div class="filters-dropdown" id="filters-dropdown">
         <select name="category-filter" class="filter-select">
           <option value="" disabled selected>Categoria</option>
           <option value="conta-e-cadastro">Conta e Cadastro</option>
@@ -87,52 +72,59 @@
           <option value="usuario2">Usuário2</option>
         </select>
       </div>
+      <button class="filter-button" id="filters-dropdown-toggle">
+        Filtrar
+      </button>
+    </div>
 
-      <button class="filter-button">Filtrar</button>
-    </header>
+    <div class="user-info" id="user-dropdown-toggle">
+      <img src="/src/static/img/user-profile-pic.png" alt="Foto do Usuário" class="user-photo" />
+      <span class="user-name" id="user-dropdown-toggle">Nome do Usuário</span>
 
-    <div class="container">
-      <a href="pergunta.html" class="ask-button">FAZER UMA PERGUNTA!</a>
-
-      <div class="questions-list">
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Como envio um e-mail assinado pela empresa?</a
-          >
-          <span class="info">Enviado por: Usuário3 às 09:05 14/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Quais são as práticas recomendadas para escrever um código
-            limpo?</a
-          >
-          <span class="info">Enviado por: Usuário4 às 13:30 15/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Como posso melhorar a responsividade do meu site?</a
-          >
-          <span class="info">Enviado por: Usuário5 às 08:45 16/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >O que é e para que serve o framework Flask?</a
-          >
-          <span class="info">Enviado por: Usuário6 às 12:00 17/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
-        <div class="question-box">
-          <a href="#" class="question-link"
-            >Quais são as melhores práticas para usar Git?</a
-          >
-          <span class="info">Enviado por: Usuário7 às 15:25 18/08/2024</span>
-          <span class="status nao-resolvido">Status: Não resolvido</span>
-        </div>
+      <div class="user-dropdown" id="user-dropdown">
+        <h4>Meus Pontos:</h4>
+        <p>10 Pontos</p>
+        <a href="minhas-perguntas.html">Minhas perguntas</a>
+        <a href="ranking.html">Ranking</a>
+        <a href="configuracoes.html">Configurações</a>
+        <a href="login.html">Sair</a>
       </div>
     </div>
-  </body>
-  <script src="/static/js/script.js"></script>
+  </header>
+
+  <div class="container">
+    <a href="pergunta.html" class="ask-button">FAZER UMA PERGUNTA!</a>
+
+    <div class="questions-list">
+      <div class="question-box">
+        <a href="resposta.html" class="question-link">Como envio um e-mail assinado pela empresa?</a>
+        <span class="info">Enviado por: Usuário3 às 09:05 14/08/2024</span>
+        <span class="status nao-resolvido">Status: Não resolvido</span>
+      </div>
+      <div class="question-box">
+        <a href="resposta.html" class="question-link">Quais são as práticas recomendadas para escrever um código
+          limpo?</a>
+        <span class="info">Enviado por: Usuário4 às 13:30 15/08/2024</span>
+        <span class="status nao-resolvido">Status: Não resolvido</span>
+      </div>
+      <div class="question-box">
+        <a href="resposta.html" class="question-link">Como posso melhorar a responsividade do meu site?</a>
+        <span class="info">Enviado por: Usuário5 às 08:45 16/08/2024</span>
+        <span class="status nao-resolvido">Status: Não resolvido</span>
+      </div>
+      <div class="question-box">
+        <a href="resposta.html" class="question-link">Quais são as melhores práticas para usar Git?</a>
+        <span class="info">Enviado por: Usuário6 às 12:00 17/08/2024</span>
+        <span class="status nao-resolvido">Status: Não resolvido</span>
+      </div>
+      <div class="question-box">
+        <a href="resposta.html" class="question-link">Quais são as melhores práticas para usar Git?</a>
+        <span class="info">Enviado por: Usuário7 às 15:25 18/08/2024</span>
+        <span class="status nao-resolvido">Status: Não resolvido</span>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="/static/js/drop-down.js"></script>
+
 </html>

@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Configurações</title>
-    <link rel="stylesheet" href="/static/css/configuracoes.css">
-    <link rel="icon" type="image/png" href="/src/static/img/favicon.png">
+    <link rel="stylesheet" href="/static/css/configuracoes.css" />
+    <link rel="icon" type="image/png" href="/src/static/img/favicon.png" />
 </head>
+
 <body>
-    <header>
-        <h1>HELP SYSTEM</h1>
-    </header>
+    <a href="index.html" class="back-button">Voltar</a>
+
     <main>
         <section class="configuracoes">
             <h2>CONFIGURAÇÕES</h2>
             <div class="container">
                 <div class="foto-perfil">
-                    <img src="/static/img/user-profile-pic.png" alt="Foto de perfil">
+                    <img src="/static/img/user-profile-pic.png" alt="Foto de perfil" />
                     <p>Alterar foto</p>
                 </div>
                 <div class="informacoes">
                     <div class="campo">
                         <label for="nome">Nome</label>
-                        <input type="text" id="nome" value="Marcelo" readonly>
+                        <input type="text" id="nome" value="Marcelo" readonly />
                         <button class="editar">Editar</button>
                     </div>
                     <div class="campo">
                         <label for="sobrenome">Sobrenome</label>
-                        <input type="text" id="sobrenome" value="Cervino" readonly>
+                        <input type="text" id="sobrenome" value="Cervino" readonly />
                         <button class="editar">Editar</button>
                     </div>
                     <div class="campo">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" value="Cervino@helpsystem" readonly>
+                        <input type="email" id="email" value="cervino@helpsystem" readonly />
                         <button class="editar">Editar</button>
                     </div>
                     <div class="campo">
                         <label for="senha">Senha</label>
-                        <input type="password" id="senha" value="**********" readonly>
+                        <input type="password" id="senha" value="**********" readonly />
                         <button class="editar">Editar</button>
                     </div>
                 </div>
-                <button class="excluir">Excluir conta</button>
+                <div class="botoes-container">
+                    <button class="excluir" onclick="confirmarExcluir()">
+                        Excluir conta
+                    </button>
+                    <button class="salvar" onclick="confirmarSalvar()">Salvar</button>
+                </div>
             </div>
         </section>
     </main>
 </body>
+<script src="/static/js/configuracoes.js"></script>
+
 </html>
