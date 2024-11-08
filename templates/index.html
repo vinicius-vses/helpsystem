@@ -47,19 +47,18 @@
         <option value="1" {% if filtro_status == '1' %}selected{% endif %}>Resolvido</option>
       </select>
 
-      <select name="filtro_colaborador" id="filtro_colaborador" class="filter-select">
-        <option value="" disabled selected>Colaborador</option>
-        {% for colaborador in usuarios %}
-            <option value="{{ colaborador.id_usuario }}" {% if colaborador.id_usuario == filtro_categoria %}selected{% endif %}>{{ colaborador.nome + ' ' + colaborador.sobrenome }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    <button class="filter-button">Filtrar</button>
-  </form>
+        <select name="colaborador-filter" class="filter-select">
+          <option value="" disabled selected>Colaborador</option>
+          <option value="usuario1">Usuário1</option>
+          <option value="usuario2">Usuário2</option>
+        </select>
+      </div>
 
-  </header>
+      <button class="filter-button">Filtrar</button>
+    </header>
+
     <div class="container">
-      <a href="{{ url_for('main.pergunta') }}" class="ask-button">FAZER UMA PERGUNTA!</a>
+      <a href="pergunta.html" class="ask-button">FAZER UMA PERGUNTA!</a>
 
     {% if solicitacoes %}
     <div class="questions-list">
