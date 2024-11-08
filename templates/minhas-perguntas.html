@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/minhas-pergunta.css" />
-    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="icon" type="image/png" href="/static/img/favicon.png" />
 </head>
 <body>
     <header class="header">
         Help System
     </header>
 
-    <a href="{{ url_for('main.index') }}" class="back-button">Voltar</a>
+    <a href="index.html" class="back-button">Voltar</a>
 
     <div class="profile">
-        <img src="{{ url_for('static', filename='img/user-profile-pic.png') }}" alt="Foto do usuário">
+        <img src="../static/img/user-profile-pic.png" alt="Foto do usuário">
         <div class="profile-info">
             <div>
                 <p>Marcelo Cervino</p>

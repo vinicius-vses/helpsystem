@@ -50,31 +50,25 @@ def login():
     if request.method == 'POST':
         email = request.form["email"]
         password = request.form["password"]
-        print("email",email,"ps",password)
 
-        usuario = Usuario.query.filter_by(email=email).first()
-        print("usuario",usuario)
-        if usuario and check_password_hash(usuario.senha, password):
-            session['id_usuario'] = usuario.id_usuario
-            print(f"Usuário logado: {usuario.nome} {usuario.sobrenome}")
+        # Check if the user exists in the database
+        user = Usuario.query.filter_by(email=email).first()
+
+        if user and check_password_hash(user.senha, password):
+            session['user_id'] = user.id
+            print(f"Usuário logado: {user.nome} {user.sobrenome}")
             return redirect(url_for('main.index'))
         else:
-            flash('Email ou senha inválido', 'error')
-            print('Usuário inválido')
+            flash('Email ou usuário inválido', 'error')
             return redirect(url_for('auth.login'))
 
     return render_template('login.html')
 
 @auth.route('/logout')
 def logout():
-    session.pop('id_usuario', None)
+    session.pop('user_id', None)
     flash('Você fez o logout.', 'info')
-    print('Você fez o logout.')
     return redirect(url_for('auth.login'))
-
-@auth.route('/recuperar-senha', methods=['GET', 'POST'])
-def recuperar_senha():
-    return render_template('recupera-senha.html')
 
 @api.route('/')
 
@@ -156,61 +150,10 @@ def criar_departamento():
 
     return jsonify({"message": "Departamento criado com sucesso", "id": departamento.id_departamento}), 200
 
-@main.route('/', methods=['GET', 'POST'])
+
+@main.route('/', methods=["GET"])
 def index():
-    categorias = db.session.query(Categoria).all()
-    usuarios = db.session.query(Usuario).all()
-
-    filtro_categoria = None
-    filtro_status = None
-    filtro_colaborador = None
-    pesquisa = None
-
-    query = Solicitacao.query
-
-    if request.method == 'POST':
-        filtro_categoria = request.form.get('categoria', None)
-        filtro_status = request.form.get('status', None)
-        filtro_colaborador = request.form.get('colaborador', None)
-        pesquisa = request.form.get('pesquisa', None)
-
-        if filtro_categoria:
-            categoria = Categoria.query.filter_by(nome=filtro_categoria).first()
-            if categoria:
-                query = query.filter(Solicitacao.id_categoria == categoria.id_categoria)
-
-        if filtro_status:
-            status = 1 if filtro_status == '1' else 0
-            query = query.filter(Solicitacao.status == status)
-
-        if filtro_colaborador:
-            colaboradores = Usuario.query.filter(
-                (Usuario.nome + ' ' + Usuario.sobrenome).like(f'%{filtro_colaborador}%')
-            ).all()
-            if colaboradores:
-                query = query.filter(Solicitacao.id_usuario.in_([colaborador.id_usuario for colaborador in colaboradores]))
-
-        if pesquisa:
-            query = query.filter(Solicitacao.descricao.like(f'%{pesquisa}%'))
-
-
-        print("Query:",query)
-
-    solicitacoes = query.all()
-
-    print(f"Solicitacoes requisitadas: {len(solicitacoes)}")
-
-    return render_template(
-        'index.html',
-        categorias=categorias,
-        usuarios=usuarios,
-        solicitacoes=solicitacoes,
-        filtro_categoria=filtro_categoria,
-        filtro_status=filtro_status,
-        filtro_colaborador=filtro_colaborador,
-        pesquisa=pesquisa
-    )
-
+    return render_template('index.html')
 
 @main.route('/cadastro', methods=["GET", "POST"])
 def cadastro():
@@ -239,6 +182,8 @@ def cadastro():
         novo_usuario = Usuario(nome=nome, sobrenome=sobrenome, email=email, senha=hashed_senha, id_departamento=id_departamento)
         print(f"Adicionando usuário: {novo_usuario.nome} {novo_usuario.sobrenome} - Departamento ID: {id_departamento}")
 
+
+
         try:
             db.session.add(novo_usuario)
             db.session.commit()
@@ -250,47 +195,6 @@ def cadastro():
             return redirect(url_for('main.cadastro'))
 
         return redirect(url_for('auth.login'))
+
     departamentos = db.session.query(Departamento).all()
     return render_template('cadastro.html', departamentos=departamentos)
-
-@main.route('/pergunta', methods=["GET", "POST"])
-def pergunta():
-    categorias = db.session.query(Categoria).all()
-    if request.method == 'POST':
-        id_usuario = session["id_usuario"]
-        id_categoria = request.form["categoria"]
-        titulo = request.form["titulo"]
-        #descricao = request.form["descricao"]
-        #nova_pergunta = Solicitacao(id_usuario=id_usuario, id_categoria=id_categoria, titulo = titulo, descricao=descricao )
-        try:
-            db.session.add(nova_pergunta)
-            db.session.commit()
-            print(f"Usuário adicionado: {nova_pergunta.id_solicitacao}")
-            flash("Cadastro realizado com sucesso!", "success")
-        except SQLAlchemyError as e:
-            db.session.rollback()  # In case of an error, rollback the transaction
-            flash(f"Erro ao salvar a pergunta: {str(e)}", 'error')
-            print("Erro ao salvar a pergunta")
-            return redirect(url_for('main.pergunta'))
-    return render_template('pergunta.html', categorias = categorias)
-
-@main.route('/lista_perguntas', methods=["GET", "POST"])
-def lista_perguntas():
-    solicitacoes = db.session.query(Solicitacao).join(Usuario).all()
-    return render_template('minhas-perguntas.html', solicitacoes=solicitacoes)
-
-@main.route('/resposta', methods=["GET", "POST"])
-def resposta():
-
-    #id_solicitacao =
-    #id_usuario =
-    #resposta
-    return render_template('resposta.html')
-
-@main.route('/configuracao', methods=["GET", "POST"])
-def configuracao():
-    return render_template('configuracoes.html')
-
-@main.route('/ranking', methods=["GET", "POST"])
-def ranking():
-    return render_template('ranking.html')

@@ -303,3 +303,18 @@ body {
     padding: 10px;
     z-index: 1000;
 }
+
+.status.resolvido {
+    color: green;
+    font-weight: bold;
+}
+
+.status.nao-resolvido {
+    color: red;
+    font-weight: bold;
+}
+
+.status {
+    display: block;
+    margin-top: 5px;
+}

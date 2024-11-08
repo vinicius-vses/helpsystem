@@ -5,29 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/pergunta.css">
-    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="icon" type="image/png" href="/static/img/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/quill@1.3.6/dist/quill.snow.css" rel="stylesheet">
 </head>
 <body>
-    <form method="POST" action="{{ url_for('main.pergunta') }}"></form>
     <div class="container">
         <h1>HELP SYSTEM</h1>
-
         <div class="form-container">
-            <a href="{{ url_for('main.index') }}" class="back-button">Voltar</a
+            <a href="index.html" class="back-button">Voltar</a>
             <label for="titulo">Faça sua pergunta:</label>
             <input type="text" id="titulo" placeholder="Título">
             <select id="categoria">
                 <option value="" disabled selected>Categoria</option>
-                {% for categoria in categorias %}
-+               <option value="{{ categoria.id_categoria }}" {% if categoria.id_categoria == filtro_categoria %}selected{% endif %}>{{ categoria.nome }}</option>
-+                {% endfor %}
+                <option value="conta-e-cadastro">Conta e Cadastro</option>
+                <option value="pagamentos-e-faturamento">Pagamentos e Faturamento</option>
+                <option value="configuracoes-e-preferencias">Configurações e Preferências</option>
+                <option value="tecnico-e-solucao-de-problemas">Técnico e Solução de Problemas</option>
+                <option value="seguranca-e-privacidade">Segurança e Privacidade</option>
+                <option value="funcionalidades-e-recursos">Funcionalidades e Recursos</option>
+                <option value="suporte-e-atendimento-ao-cliente">Suporte e Atendimento ao Cliente</option>
+                <option value="integracoes-e-apis">Integrações e APIs</option>
+                <option value="feedback-e-sugestoes">Feedback e Sugestões</option>
+                <option value="comunidade-e-colaboracao">Comunidade e Colaboração</option>
+                <option value="documentacao-e-tutoriais">Documentação e Tutoriais</option>
+                <option value="atualizacoes-e-novidades">Atualizações e Novidades</option>
+                <option value="politicas-e-termos-de-uso">Políticas e Termos de Uso</option>
+                <option value="outro">Outro</option>
             </select>
             <div id="quillInput"></div>
             <button type="button" id="submit-button">ENVIAR</button>
         </div>
     </div>
-    </form>
+    
     <script src="https://cdn.jsdelivr.net/npm/quill@1.3.6/dist/quill.min.js"></script>
     <script>
         var quill = new Quill('#quillInput', {

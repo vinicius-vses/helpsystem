@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help System</title>
     <link rel="stylesheet" href="/static/css/resposta.css" />
-    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="icon" type="image/png" href="/static/img/favicon.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/quill@1.3.6/dist/quill.snow.css"
       rel="stylesheet"
@@ -16,23 +16,21 @@
     <header>
       <h1>HELP SYSTEM</h1>
     </header>
-    <a href="{{ url_for('main.index') }}" class="back-button">Voltar</a>
+    <a href="index.html" class="back-button">Voltar</a>
     <main>
       <div class="content">
         <aside class="user-info">
           <img
-            src="{{ url_for('static', filename='img/user-profile-pic.png') }}"
+            src="/src/static/img/user-profile-pic.png"
             alt="Foto do Usuário"
             class="user-photo"
           />
           <h3>Autor</h3>
         </aside>
         <section class="question-section">
-          <h2>Quais são as melhores práticas para usar Git?</h2>
+          <h2>Problema de conexão à internet?</h2>
           <p>
-            Estou começando a usar Git e gostaria de saber quais práticas ajudam
-            a manter o trabalho organizado e facilitam a colaboração, como
-            evitar conflitos e organizar os commits.
+            Problema de conexão à internet.
           </p>
         </section>
       </div>

@@ -1,0 +1,189 @@
+{
+    "usuarios": [
+      {
+        "id_usuario": 1,
+        "nome": "Vinicius",
+        "sobrenome": "Souza",
+        "id_departamento": 1,
+        "email": "vinicius.souza@example.com",
+        "senha": "senha123"
+      },
+      {
+        "id_usuario": 2,
+        "nome": "Marcos",
+        "sobrenome": "de Camargo",
+        "id_departamento": 2,
+        "email": "marcos.de_camargo@example.com",
+        "senha": "senha456"
+      },
+      {
+        "id_usuario": 3,
+        "nome": "Marcelo",
+        "sobrenome": "Cervino",
+        "id_departamento": 1,
+        "email": "marcelo.cervino@example.com",
+        "senha": "senha789"
+      },
+      {
+        "id_usuario": 4,
+        "nome": "Raquel",
+        "sobrenome": "Moriconi",
+        "id_departamento": 3,
+        "email": "raquel.moriconi@example.com",
+        "senha": "senha101"
+      }
+    ],
+    "categorias": [
+      {
+        "id_categoria": 1,
+        "nome": "Infraestrutura",
+        "descricao": "Problemas relacionados à infraestrutura"
+      },
+      {
+        "id_categoria": 2,
+        "nome": "Software",
+        "descricao": "Erros e atualizações de software"
+      },
+      {
+        "id_categoria": 3,
+        "nome": "Hardware",
+        "descricao": "Manutenção e problemas de hardware"
+      },
+      {
+        "id_categoria": 4,
+        "nome": "Suporte Geral",
+        "descricao": "Outros tipos de suporte"
+      }
+    ],
+    "departamentos": [
+      {
+        "id_departamento": 1,
+        "nome": "TI",
+        "descricao": "Tecnologia da Informação"
+      },
+      {
+        "id_departamento": 2,
+        "nome": "RH",
+        "descricao": "Recursos Humanos"
+      },
+      {
+        "id_departamento": 3,
+        "nome": "Financeiro",
+        "descricao": "Gerenciamento financeiro"
+      },
+      {
+        "id_departamento": 4,
+        "nome": "Marketing",
+        "descricao": "Departamento de marketing e publicidade"
+      }
+    ],
+    "solicitacoes": [
+      {
+        "id_solicitacao": 1,
+        "id_usuario": 1,
+        "id_categoria": 1,
+        "titulo": "Problema de conexão à internet",
+        "descricao": "A conexão de internet está instável no escritório",
+        "status": 0,
+        "data_criacao": "2024-11-01 09:30:00",
+        "data_resolucao": null
+      },
+      {
+        "id_solicitacao": 2,
+        "id_usuario": 2,
+        "id_categoria": 2,
+        "titulo": "Atualização do sistema",
+        "descricao": "Sistema precisa ser atualizado para a versão mais recente",
+        "status": 0,
+        "data_criacao": "2024-11-02 10:15:00",
+        "data_resolucao": null
+      },
+      {
+        "id_solicitacao": 3,
+        "id_usuario": 3,
+        "id_categoria": 3,
+        "titulo": "Problema no monitor",
+        "descricao": "O monitor não liga",
+        "status": 1,
+        "data_criacao": "2024-11-03 11:45:00",
+        "data_resolucao": "2024-11-03 15:30:00"
+      },
+      {
+        "id_solicitacao": 4,
+        "id_usuario": 4,
+        "id_categoria": 4,
+        "titulo": "Solicitação de acesso ao sistema",
+        "descricao": "Necessário acesso ao novo sistema de vendas",
+        "status": 0,
+        "data_criacao": "2024-11-04 08:20:00",
+        "data_resolucao": null
+      },
+      {
+        "id_solicitacao": 1,
+        "id_usuario": 1,
+        "id_categoria": 1,
+        "titulo": "Centralizar div",
+        "descricao": "Como centralizar uma tag div no html?",
+        "status": 1,
+        "data_criacao": "2024-11-01 19:30:00",
+        "data_resolucao": null
+      }
+    ],
+    "respostas": [
+      {
+        "id_resposta": 1,
+        "id_solicitacao": 1,
+        "id_usuario": 2,
+        "resposta": "Verifique se o cabo está conectado corretamente.",
+        "data_resposta": "2024-11-01 10:00:00",
+        "pontos": 2
+      },
+      {
+        "id_resposta": 2,
+        "id_solicitacao": 2,
+        "id_usuario": 1,
+        "resposta": "Reinicie o sistema após a atualização.",
+        "data_resposta": "2024-11-02 10:45:00",
+        "pontos": 3
+      },
+      {
+        "id_resposta": 3,
+        "id_solicitacao": 3,
+        "id_usuario": 4,
+        "resposta": "Substituímos o monitor e o problema foi resolvido.",
+        "data_resposta": "2024-11-03 16:00:00",
+        "pontos": 5
+      },
+      {
+        "id_resposta": 4,
+        "id_solicitacao": 4,
+        "id_usuario": 3,
+        "resposta": "A solicitação de acesso será atendida em breve.",
+        "data_resposta": "2024-11-04 09:00:00",
+        "pontos": 1
+      }
+    ],
+    "ranking": [
+      {
+        "id_usuario": 1,
+        "pontos_totais": 10,
+        "nivel_proatividade": 3
+      },
+      {
+        "id_usuario": 2,
+        "pontos_totais": 7,
+        "nivel_proatividade": 2
+      },
+      {
+        "id_usuario": 3,
+        "pontos_totais": 5,
+        "nivel_proatividade": 1
+      },
+      {
+        "id_usuario": 4,
+        "pontos_totais": 12,
+        "nivel_proatividade": 4
+      }
+    ]
+  }
+  
