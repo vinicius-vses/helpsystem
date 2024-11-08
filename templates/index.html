@@ -31,9 +31,9 @@
         <a href="{{ url_for('auth.logout') }}">Sair</a>
       </div>
     </div>
-
+    <div class="filters-container"></div>
     <form method="POST" action="{{ url_for('main.index') }}"></form>
-    <div class="filters-dropdown">
+    <div class="filters-dropdown" id="filters-dropdown">
       <select name="filtro_categoria" id="filtro_categoria" class="filter-select">
         <option value="" disabled selected>Categoria</option>
         {% for categoria in categorias %}
@@ -54,17 +54,17 @@
         </select>
       </div>
 
-      <button class="filter-button">Filtrar</button>
+      <button class="filter-button" id="filters-dropdown-toggle">Filtrar</button>
     </header>
 
     <div class="container">
-      <a href="pergunta.html" class="ask-button">FAZER UMA PERGUNTA!</a>
+      <a href="{{ url_for('main.pergunta') }}"" class="ask-button">FAZER UMA PERGUNTA!</a>
 
     {% if solicitacoes %}
     <div class="questions-list">
         {% for solicitacao in solicitacoes %}
             <div class="question-box">
-                <a href="#" class="question-link">{{ solicitacao.titulo }}</a>
+                <a href="{{ url_for('main.resposta') }}" class="question-link">{{ solicitacao.titulo }}</a>
                 <span class="info">
                     Enviado por: {{ solicitacao.usuario.nome }} {{ solicitacao.usuario.sobrenome }}
                     às {{ solicitacao.data_criacao.strftime('%H:%M %d/%m/%Y') }}
@@ -91,5 +91,5 @@
       {% endif %}
   </div>
   </body>
-  <script src="/static/js/script.js"></script>
+  <script src="/static/js/drop-down.js"></script>
 </html>
